@@ -15,17 +15,19 @@ Generally, if the syntax is wrong or the feature isn't implemented the program w
 
 ### Usage
 ```sh
-DOdo - v.1 The Unofficial DigitalOcean CLI tool Basic usage: dodo [global args] action [action args]
+DOdo - v.1 The Unofficial DigitalOcean CLI tool
+Basic usage: dodo [global args] action [action args]
   Examples:
         dodo list drops
         dodo list ips
         dodo create droplet name=awesomedroplet.com memory=512mb
- Global Args:
+Global Args:
   -token="": DO access token (or set $DO_TOKEN environment variable)
- Actions:
+Actions:
   list
   create
-  delete For help on an action, add 'help' after it (i.e. dodo list help)
+  delete
+For help on an action, add 'help' after it (i.e. dodo list help)
   ```
   
 ### Examples
