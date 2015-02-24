@@ -20,7 +20,7 @@ Basic usage: dodo [global args] action [action args]
   Examples:
         dodo list drops
         dodo list ips
-        dodo create droplet name=awesomedroplet.com memory=512mb
+        dodo create droplet name=awesomedroplet.com size=512mb
 Global Args:
   -token="": DO access token (or set $DO_TOKEN environment variable)
 Actions:
