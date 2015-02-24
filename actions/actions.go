@@ -11,6 +11,9 @@ import (
 
 func Delete(deleteItem string, args []string, client *godo.Client) {
 	switch deleteItem {
+	case "help":
+		fmt.Printf("USAGE: 'dodo delete droplet [name]'\n")
+		os.Exit(2)
 	case "droplet":
 			var myId int
 			myName := args[0]
@@ -33,7 +36,7 @@ func Delete(deleteItem string, args []string, client *godo.Client) {
 func Create(createItem string, args []string, client *godo.Client) {
 	switch createItem {
 	case "help":
-		fmt.Printf("USAGE: 'dodo create ITEM var=value' where ITEM is one of:\n  droplet\nDroplet vars:\n  name\n  size\n  image\n")
+		fmt.Printf("USAGE: 'dodo create droplet [var=value]'\nDroplet vars:\n  name\n  size\n  image\n  region\n  userdata\n  keys\n  backups\n  ipv6\n  privatenetworking\n")
 		os.Exit(2)
 	case "droplet":
 		createRequest := &godo.DropletCreateRequest{
@@ -79,7 +82,7 @@ func Create(createItem string, args []string, client *godo.Client) {
 			}
 			_, _, err := client.Droplets.Create(createRequest)
 			if err != nil {
-				fmt.Printf("Something bad happened: %s\n\n", err)
+				fmt.Printf("%s\n", err)
 				os.Exit(1)
 			}
 			fmt.Printf("Successfully created droplet %s\n", createRequest.Name)
@@ -94,7 +97,7 @@ func Create(createItem string, args []string, client *godo.Client) {
 func List(listItem string, client *godo.Client) {
 	switch listItem {
 	case "help", "-h", "--help":
-		fmt.Printf("USAGE: 'dodo list ITEM' where ITEM is one of:\n  droplets\n  ips\n  keys\n  images\n")
+		fmt.Printf("USAGE: 'dodo list ITEM' where ITEM is one of:\n  droplets or drops\n  ips\n  keys or sshkeys\n  images or distros\n")
 		os.Exit(2)
 	case "droplets", "drops", "dr":
 		drops, err := DropletList(client)
