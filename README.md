@@ -19,7 +19,8 @@ DOdo - v.1 The Unofficial DigitalOcean CLI tool Basic usage: dodo [global args] 
   Examples:
         dodo list drops
         dodo list ips
-        dodo create droplet name=awesomedroplet.com memory=512mb Global Args:
+        dodo create droplet name=awesomedroplet.com memory=512mb
+ Global Args:
   -token="": DO access token (or set $DO_TOKEN environment variable)
  Actions:
   list
