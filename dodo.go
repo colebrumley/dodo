@@ -21,7 +21,7 @@ func init() {
 	flag.StringVar(&cmdToken, "token", "", "DO access token (or set $DO_TOKEN environment variable)")
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "DOdo - v.1 The Unofficial DigitalOcean CLI tool\nBasic usage: dodo [global args] action [action args]\n")
-		fmt.Fprintf(os.Stderr, "  Examples:\n\tdodo list drops\n\tdodo list ips\n\tdodo create droplet name=awesomedroplet.com memory=512mb\nGlobal Args:\n")
+		fmt.Fprintf(os.Stderr, "  Examples:\n\tdodo list drops\n\tdodo list ips\n\tdodo create droplet name=awesomedroplet.com size=512mb image=fedora-21-x64\nGlobal Args:\n")
 		flag.PrintDefaults()
 		fmt.Fprintf(os.Stderr, "Actions:\n  list\n  create\n  delete\n")
 		fmt.Fprintf(os.Stderr, "For help on an action, add 'help' after it (i.e. dodo list help)\n")
